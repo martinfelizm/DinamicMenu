@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CategoriaProductos">
+    <Key>
+      <PropertyRef Name="CatID" />
+    </Key>
+    <Property Name="CatID" Type="int" Nullable="false" />
+    <Property Name="CatFecha" Type="datetime" Nullable="false" />
+    <Property Name="CatNombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UsuId" Type="int" Nullable="false" />
+    <Property Name="CatFechaActualizacion" Type="datetime" />
+    <Property Name="rowid" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Compras">
+    <Key>
+      <PropertyRef Name="ComID" />
+    </Key>
+    <Property Name="ComID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComFecha" Type="datetime" Nullable="false" />
+    <Property Name="Comtotal" Type="money" Nullable="false" />
+    <Property Name="UsuId" Type="int" Nullable="false" />
+    <Property Name="ComDescuento" Type="money" />
+    <Property Name="ComFechaActualizacion" Type="datetime" />
+    <Property Name="rowid" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ComprasDetalles">
+    <Key>
+      <PropertyRef Name="ComID" />
+      <PropertyRef Name="CdPosicion" />
+      <PropertyRef Name="UsuId" />
+    </Key>
+    <Property Name="ComID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CdPosicion" Type="int" Nullable="false" />
+    <Property Name="ProId" Type="int" Nullable="false" />
+    <Property Name="CdCantidad" Type="int" Nullable="false" />
+    <Property Name="UsuId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CdFechaActualizacion" Type="datetime" />
+    <Property Name="rowid" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WebTest.dbo.Login' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="UsuID" />
+    </Key>
+    <Property Name="UsuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="UserPass" Type="varchar" MaxLength="50" />
+    <Property Name="RolID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WebTest.dbo.MainMenu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MainMenu">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WebTest.dbo.Productos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="ProId" />
+      <PropertyRef Name="ProFecha" />
+      <PropertyRef Name="ProNombre" />
+      <PropertyRef Name="CatId" />
+      <PropertyRef Name="UsuId" />
+    </Key>
+    <Property Name="ProId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProFecha" Type="datetime" Nullable="false" />
+    <Property Name="ProNombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProCantidad" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ProPrecio" Type="money" />
+    <Property Name="CatId" Type="int" Nullable="false" />
+    <Property Name="ProFechaActualizacion" Type="datetime" />
+    <Property Name="UsuId" Type="int" Nullable="false" />
+    <Property Name="rowid" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WebTest.dbo.Roles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RolID" />
+    </Key>
+    <Property Name="RolID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RolDescripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RolesUsuarios">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RolFecha" Type="datetime" Nullable="false" />
+    <Property Name="RolDescripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UsuarioSesion" Type="varchar(max)" />
+    <Property Name="RolFechaActualizacion" Type="datetime" />
+    <Property Name="rowid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WebTest.dbo.SubMenu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SubMenu">
+    <Key>
+      <PropertyRef Name="SmID" />
+    </Key>
+    <Property Name="SmID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SmName" Type="varchar" MaxLength="150" />
+    <Property Name="SmController" Type="varchar" MaxLength="200" />
+    <Property Name="SmAction" Type="varchar" MaxLength="200" />
+    <Property Name="MenuID" Type="int" />
+    <Property Name="RolID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="UsuID" />
+    </Key>
+    <Property Name="UsuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuFecha" Type="datetime" Nullable="false" />
+    <Property Name="UsuNombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="UsuApellido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UsuClave" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="UsuEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RolID" Type="int" Nullable="false" />
+    <Property Name="UsuFechaActualizacion" Type="datetime" />
+    <Property Name="UsuInicioSesion" Type="varchar" MaxLength="50" />
+    <Property Name="rowid" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WebTest.dbo.Ventas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Ventas">
+    <Key>
+      <PropertyRef Name="VenID" />
+      <PropertyRef Name="VenFecha" />
+      <PropertyRef Name="Ventotal" />
+      <PropertyRef Name="UsuId" />
+      <PropertyRef Name="VenFechaActualizacion" />
+    </Key>
+    <Property Name="VenID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VenFecha" Type="datetime" Nullable="false" />
+    <Property Name="Ventotal" Type="real" Nullable="false" />
+    <Property Name="UsuId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="VenDescuento" Type="money" />
+    <Property Name="VenFechaActualizacion" Type="datetime" Nullable="false" />
+    <Property Name="rowid" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="VentasDetalles">
+    <Key>
+      <PropertyRef Name="VdId" />
+      <PropertyRef Name="VdPoscion" />
+      <PropertyRef Name="UsuID" />
+    </Key>
+    <Property Name="VdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VdPoscion" Type="int" Nullable="false" />
+    <Property Name="VenId" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="VdSubTotal" Type="real" Nullable="false" />
+    <Property Name="ProID" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Vdcantidad" Type="int" Nullable="false" />
+    <Property Name="UsuID" Type="int" Nullable="false" />
+    <Property Name="rowid" Type="varchar(max)" />
+  </EntityType>
+  <Association Name="FK_CategoriaProductos_CategoriaProductos">
+    <End Role="CategoriaProductos" Type="Self.CategoriaProductos" Multiplicity="1" />
+    <End Role="CategoriaProductos1" Type="Self.CategoriaProductos" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CategoriaProductos">
+        <PropertyRef Name="CatID" />
+      </Principal>
+      <Dependent Role="CategoriaProductos1">
+        <PropertyRef Name="CatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComprasDetalles_ComprasDetalles">
+    <End Role="ComprasDetalles" Type="Self.ComprasDetalles" Multiplicity="1" />
+    <End Role="ComprasDetalles1" Type="Self.ComprasDetalles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ComprasDetalles">
+        <PropertyRef Name="ComID" />
+        <PropertyRef Name="CdPosicion" />
+        <PropertyRef Name="UsuId" />
+      </Principal>
+      <Dependent Role="ComprasDetalles1">
+        <PropertyRef Name="ComID" />
+        <PropertyRef Name="CdPosicion" />
+        <PropertyRef Name="UsuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebTestModelStoreContainer">
+    <EntitySet Name="CategoriaProductos" EntityType="Self.CategoriaProductos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Compras" EntityType="Self.Compras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ComprasDetalles" EntityType="Self.ComprasDetalles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolesUsuarios" EntityType="Self.RolesUsuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VentasDetalles" EntityType="Self.VentasDetalles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Login].[UsuID] AS [UsuID], 
+[Login].[UserName] AS [UserName], 
+[Login].[UserPass] AS [UserPass], 
+[Login].[RolID] AS [RolID]
+FROM [dbo].[Login] AS [Login]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MainMenu" EntityType="Self.MainMenu" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MainMenu].[MenuID] AS [MenuID], 
+[MainMenu].[MenuName] AS [MenuName]
+FROM [dbo].[MainMenu] AS [MainMenu]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Productos" EntityType="Self.Productos" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Productos].[ProId] AS [ProId], 
+[Productos].[ProFecha] AS [ProFecha], 
+[Productos].[ProNombre] AS [ProNombre], 
+[Productos].[ProCantidad] AS [ProCantidad], 
+[Productos].[ProPrecio] AS [ProPrecio], 
+[Productos].[CatId] AS [CatId], 
+[Productos].[ProFechaActualizacion] AS [ProFechaActualizacion], 
+[Productos].[UsuId] AS [UsuId], 
+[Productos].[rowid] AS [rowid]
+FROM [dbo].[Productos] AS [Productos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Roles" EntityType="Self.Roles" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Roles].[RolID] AS [RolID], 
+[Roles].[RolDescripcion] AS [RolDescripcion]
+FROM [dbo].[Roles] AS [Roles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SubMenu" EntityType="Self.SubMenu" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[SubMenu].[SmID] AS [SmID], 
+[SubMenu].[SmName] AS [SmName], 
+[SubMenu].[SmController] AS [SmController], 
+[SubMenu].[SmAction] AS [SmAction], 
+[SubMenu].[MenuID] AS [MenuID], 
+[SubMenu].[RolID] AS [RolID]
+FROM [dbo].[SubMenu] AS [SubMenu]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Ventas" EntityType="Self.Ventas" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Ventas].[VenID] AS [VenID], 
+[Ventas].[VenFecha] AS [VenFecha], 
+[Ventas].[Ventotal] AS [Ventotal], 
+[Ventas].[UsuId] AS [UsuId], 
+[Ventas].[VenDescuento] AS [VenDescuento], 
+[Ventas].[VenFechaActualizacion] AS [VenFechaActualizacion], 
+[Ventas].[rowid] AS [rowid]
+FROM [dbo].[Ventas] AS [Ventas]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_CategoriaProductos_CategoriaProductos" Association="Self.FK_CategoriaProductos_CategoriaProductos">
+      <End Role="CategoriaProductos" EntitySet="CategoriaProductos" />
+      <End Role="CategoriaProductos1" EntitySet="CategoriaProductos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComprasDetalles_ComprasDetalles" Association="Self.FK_ComprasDetalles_ComprasDetalles">
+      <End Role="ComprasDetalles" EntitySet="ComprasDetalles" />
+      <End Role="ComprasDetalles1" EntitySet="ComprasDetalles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

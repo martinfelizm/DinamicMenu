@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebTestModelStoreContainer" CdmEntityContainer="WebTestContext">
+    <EntitySetMapping Name="CategoriaProductos">
+      <EntityTypeMapping TypeName="WebTestModel.CategoriaProductos">
+        <MappingFragment StoreEntitySet="CategoriaProductos">
+          <ScalarProperty Name="CatID" ColumnName="CatID" />
+          <ScalarProperty Name="CatFecha" ColumnName="CatFecha" />
+          <ScalarProperty Name="CatNombre" ColumnName="CatNombre" />
+          <ScalarProperty Name="UsuId" ColumnName="UsuId" />
+          <ScalarProperty Name="CatFechaActualizacion" ColumnName="CatFechaActualizacion" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compras">
+      <EntityTypeMapping TypeName="WebTestModel.Compras">
+        <MappingFragment StoreEntitySet="Compras">
+          <ScalarProperty Name="ComID" ColumnName="ComID" />
+          <ScalarProperty Name="ComFecha" ColumnName="ComFecha" />
+          <ScalarProperty Name="Comtotal" ColumnName="Comtotal" />
+          <ScalarProperty Name="UsuId" ColumnName="UsuId" />
+          <ScalarProperty Name="ComDescuento" ColumnName="ComDescuento" />
+          <ScalarProperty Name="ComFechaActualizacion" ColumnName="ComFechaActualizacion" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComprasDetalles">
+      <EntityTypeMapping TypeName="WebTestModel.ComprasDetalles">
+        <MappingFragment StoreEntitySet="ComprasDetalles">
+          <ScalarProperty Name="ComID" ColumnName="ComID" />
+          <ScalarProperty Name="CdPosicion" ColumnName="CdPosicion" />
+          <ScalarProperty Name="ProId" ColumnName="ProId" />
+          <ScalarProperty Name="CdCantidad" ColumnName="CdCantidad" />
+          <ScalarProperty Name="UsuId" ColumnName="UsuId" />
+          <ScalarProperty Name="CdFechaActualizacion" ColumnName="CdFechaActualizacion" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolesUsuarios">
+      <EntityTypeMapping TypeName="WebTestModel.RolesUsuarios">
+        <MappingFragment StoreEntitySet="RolesUsuarios">
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+          <ScalarProperty Name="RolFecha" ColumnName="RolFecha" />
+          <ScalarProperty Name="RolDescripcion" ColumnName="RolDescripcion" />
+          <ScalarProperty Name="UsuarioSesion" ColumnName="UsuarioSesion" />
+          <ScalarProperty Name="RolFechaActualizacion" ColumnName="RolFechaActualizacion" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="WebTestModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="UsuID" ColumnName="UsuID" />
+          <ScalarProperty Name="UsuFecha" ColumnName="UsuFecha" />
+          <ScalarProperty Name="UsuNombre" ColumnName="UsuNombre" />
+          <ScalarProperty Name="UsuApellido" ColumnName="UsuApellido" />
+          <ScalarProperty Name="UsuClave" ColumnName="UsuClave" />
+          <ScalarProperty Name="UsuEmail" ColumnName="UsuEmail" />
+          <ScalarProperty Name="RolID" ColumnName="RolID" />
+          <ScalarProperty Name="UsuFechaActualizacion" ColumnName="UsuFechaActualizacion" />
+          <ScalarProperty Name="UsuInicioSesion" ColumnName="UsuInicioSesion" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VentasDetalles">
+      <EntityTypeMapping TypeName="WebTestModel.VentasDetalles">
+        <MappingFragment StoreEntitySet="VentasDetalles">
+          <ScalarProperty Name="VdId" ColumnName="VdId" />
+          <ScalarProperty Name="VdPoscion" ColumnName="VdPoscion" />
+          <ScalarProperty Name="VenId" ColumnName="VenId" />
+          <ScalarProperty Name="VdSubTotal" ColumnName="VdSubTotal" />
+          <ScalarProperty Name="ProID" ColumnName="ProID" />
+          <ScalarProperty Name="Vdcantidad" ColumnName="Vdcantidad" />
+          <ScalarProperty Name="UsuID" ColumnName="UsuID" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login">
+      <EntityTypeMapping TypeName="WebTestModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="UsuID" ColumnName="UsuID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPass" ColumnName="UserPass" />
+          <ScalarProperty Name="RolID" ColumnName="RolID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MainMenu">
+      <EntityTypeMapping TypeName="WebTestModel.MainMenu">
+        <MappingFragment StoreEntitySet="MainMenu">
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="WebTestModel.Productos">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="ProId" ColumnName="ProId" />
+          <ScalarProperty Name="ProFecha" ColumnName="ProFecha" />
+          <ScalarProperty Name="ProNombre" ColumnName="ProNombre" />
+          <ScalarProperty Name="ProCantidad" ColumnName="ProCantidad" />
+          <ScalarProperty Name="ProPrecio" ColumnName="ProPrecio" />
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="ProFechaActualizacion" ColumnName="ProFechaActualizacion" />
+          <ScalarProperty Name="UsuId" ColumnName="UsuId" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="WebTestModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RolID" ColumnName="RolID" />
+          <ScalarProperty Name="RolDescripcion" ColumnName="RolDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubMenu">
+      <EntityTypeMapping TypeName="WebTestModel.SubMenu">
+        <MappingFragment StoreEntitySet="SubMenu">
+          <ScalarProperty Name="RolID" ColumnName="RolID" />
+          <ScalarProperty Name="SmID" ColumnName="SmID" />
+          <ScalarProperty Name="SmName" ColumnName="SmName" />
+          <ScalarProperty Name="SmController" ColumnName="SmController" />
+          <ScalarProperty Name="SmAction" ColumnName="SmAction" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ventas">
+      <EntityTypeMapping TypeName="WebTestModel.Ventas">
+        <MappingFragment StoreEntitySet="Ventas">
+          <ScalarProperty Name="VenID" ColumnName="VenID" />
+          <ScalarProperty Name="VenFecha" ColumnName="VenFecha" />
+          <ScalarProperty Name="Ventotal" ColumnName="Ventotal" />
+          <ScalarProperty Name="UsuId" ColumnName="UsuId" />
+          <ScalarProperty Name="VenDescuento" ColumnName="VenDescuento" />
+          <ScalarProperty Name="VenFechaActualizacion" ColumnName="VenFechaActualizacion" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="WebTestModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
